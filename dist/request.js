@@ -1,4 +1,4 @@
-"use strict";var _toConsumableArray2 = require("babel-runtime/helpers/toConsumableArray");var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);var _regenerator = require("babel-runtime/regenerator");var _regenerator2 = _interopRequireDefault(_regenerator);var _asyncToGenerator2 = require("babel-runtime/helpers/asyncToGenerator");var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2 = require("babel-runtime/helpers/possibleConstructorReturn");var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);var _inherits2 = require("babel-runtime/helpers/inherits");var _inherits3 = _interopRequireDefault(_inherits2);var rawRequest = function () {var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(
+"use strict";var _toConsumableArray2 = require("babel-runtime/helpers/toConsumableArray");var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);var _regenerator = require("babel-runtime/regenerator");var _regenerator2 = _interopRequireDefault(_regenerator);var _assign = require("babel-runtime/core-js/object/assign");var _assign2 = _interopRequireDefault(_assign);var _asyncToGenerator2 = require("babel-runtime/helpers/asyncToGenerator");var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);var _promise = require("babel-runtime/core-js/promise");var _promise2 = _interopRequireDefault(_promise);var _getPrototypeOf = require("babel-runtime/core-js/object/get-prototype-of");var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);var _possibleConstructorReturn2 = require("babel-runtime/helpers/possibleConstructorReturn");var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);var _inherits2 = require("babel-runtime/helpers/inherits");var _inherits3 = _interopRequireDefault(_inherits2);var rawRequest = function () {var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(
 
 
 
@@ -29,7 +29,7 @@
                             json: true,
                             resolveWithFullResponse: true };
 
-                        fullOpts = Object.assign({}, defaultOpts, opts);return _context.abrupt("return",
+                        fullOpts = (0, _assign2.default)({}, defaultOpts, opts);return _context.abrupt("return",
                         request(fullOpts));case 3:case "end":return _context.stop();}}}, _callee, this);}));return function rawRequest(_x3, _x4) {return _ref.apply(this, arguments);};}();var apiRequest = function () {var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(
 
 
@@ -103,7 +103,7 @@
                             included: [] };case 4:if (!(
 
                         fetched < amount)) {_context3.next = 15;break;}
-                        thisParams = Object.assign({}, params, {
+                        thisParams = (0, _assign2.default)({}, params, {
                             "page[offset]": page,
                             "page[limit]": perPage });_context3.next = 8;return (
 
@@ -113,6 +113,6 @@
                         fetched += perPage;
                         page++;_context3.next = 4;break;case 15:return _context3.abrupt("return",
 
-                        combined);case 16:case "end":return _context3.stop();}}}, _callee3, this);}));return function apiRequestPaged(_x9, _x10, _x11, _x12, _x13) {return _ref3.apply(this, arguments);};}();function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}Object.defineProperty(exports, "__esModule", { value: true });var request = require("request-promise-native");var root = "https://api.dc01.gamelockerapp.com/shards/global";var APIError = function (_Error) {(0, _inherits3.default)(APIError, _Error);function APIError(message) {var statusCode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;(0, _classCallCheck3.default)(this, APIError);var _this = (0, _possibleConstructorReturn3.default)(this, (APIError.__proto__ || Object.getPrototypeOf(APIError)).call(this, message));_this.statusCode = statusCode;return _this;}return APIError;}(Error);exports.APIError = APIError;var resetTimeInMs = function resetTimeInMs(resetTime) {return Math.ceil(parseInt(resetTime, 10) / 1000);};var sleep = function sleep(ms) {return new Promise(function (resolve) {setTimeout(resolve, ms);});};var rateLimitWait = Promise.resolve();exports.rawRequest = rawRequest;exports.apiRequest = apiRequest;
+                        combined);case 16:case "end":return _context3.stop();}}}, _callee3, this);}));return function apiRequestPaged(_x9, _x10, _x11, _x12, _x13) {return _ref3.apply(this, arguments);};}();function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}Object.defineProperty(exports, "__esModule", { value: true });var request = require("request-promise-native");var root = "https://api.dc01.gamelockerapp.com/shards/global";var APIError = function (_Error) {(0, _inherits3.default)(APIError, _Error);function APIError(message) {var statusCode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;(0, _classCallCheck3.default)(this, APIError);var _this = (0, _possibleConstructorReturn3.default)(this, (APIError.__proto__ || (0, _getPrototypeOf2.default)(APIError)).call(this, message));_this.statusCode = statusCode;return _this;}return APIError;}(Error);exports.APIError = APIError;var resetTimeInMs = function resetTimeInMs(resetTime) {return Math.ceil(parseInt(resetTime, 10) / 1000);};var sleep = function sleep(ms) {return new _promise2.default(function (resolve) {setTimeout(resolve, ms);});};var rateLimitWait = _promise2.default.resolve();exports.rawRequest = rawRequest;exports.apiRequest = apiRequest;
 
 exports.apiRequestPaged = apiRequestPaged;
