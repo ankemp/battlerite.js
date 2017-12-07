@@ -3,7 +3,7 @@
     "module": "CommonJS",
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2017",
+    "target": "es5",
     "lib": [
       "es6",
       "es7",
@@ -11,7 +11,10 @@
     ],
     "baseUrl": "./",
     "paths": {
-      "minimist-string": ["minimist-string", "types/minimist-string"]
+      "minimist-string": [
+        "minimist-string",
+        "types/minimist-string"
+      ]
     },
     "typeRoots": [
       "node_modules/@types",
